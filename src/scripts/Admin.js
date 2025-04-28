@@ -83,13 +83,13 @@ function Admin() {
 
         // 동시에 사용자에게 이미지 전송
         try {
-            const toPersonEmail = "admin@cho010105-6xnw.wbx.ai";
+            const email = "admin@cho010105-6xnw.wbx.ai";
             await fetch('https://noble-tammara-kicksco-97f46231.koyeb.app/api/send-image', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ toPersonEmail })
+                body: JSON.stringify({ email })
             });
             console.log('✅ Webex 이미지 전송 성공');
         } catch (err) {
