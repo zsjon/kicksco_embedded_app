@@ -66,18 +66,35 @@ function Admin() {
     };
 
     // Meraki Dashboard 새 팝업
-    const openMerakiDashboardPopup = () => {
+    const openMerakiDashboardPopup = async () => {
         const sw = window.screen.availWidth;
         const sh = window.screen.availHeight;
         const width = Math.floor(sw * 0.7);
         const height = Math.floor(sh * 0.7);
         const left = Math.floor((sw - width) / 2);
         const top = Math.floor((sh - height) / 2);
+
+        // 먼저 Meraki Dashboard 새 창 열기
         window.open(
             'https://dashboard.meraki.com',
             'MerakiDashboard',
             `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
         );
+
+        // 동시에 사용자에게 이미지 전송
+        try {
+            const toPersonEmail = "admin@cho010105-6xnw.wbx.ai";
+            await fetch('https://noble-tammara-kicksco-97f46231.koyeb.app/send-image', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ toPersonEmail })
+            });
+            console.log('✅ Webex 이미지 전송 성공');
+        } catch (err) {
+            console.error('❌ Webex 이미지 전송 실패:', err);
+        }
     };
 
     return (
