@@ -194,9 +194,9 @@ function User({ user }) {
                             alt="Selected"
                             className="selected-image"
                         />
-                        <button onClick={handleCancel} className="retake-button">
-                            다른 사진 업로드
-                        </button>
+                        {/*<button onClick={handleCancel} className="retake-button">*/}
+                        {/*    다른 사진 업로드*/}
+                        {/*</button>*/}
                     </div>
                 )}
             </div>

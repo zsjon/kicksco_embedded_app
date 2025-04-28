@@ -109,6 +109,7 @@
 .selected-image-container {
     margin-top: 1rem;
     text-align: center;
+    height: 450px;
 }
 
 /* 선택된 이미지 */
