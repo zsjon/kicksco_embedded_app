@@ -86,7 +86,7 @@ function Admin() {
 
             <MapContainer
                 center={[37.5665, 126.978]}
-                zoom={12}
+                zoom={18}
                 className="admin-map"
             >
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
